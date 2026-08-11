@@ -182,6 +182,31 @@ footer{border-top:1px solid var(--border);padding:2.5rem 1.75rem;text-align:cent
   .grid,.hero-title .t2,.scroll-cue,.dot{animation:none}
   .news-card,.shot img,.plat,.btn-buy{transition:none}
 }
+
+/* ── AFFILIATE ────────────────────────────────────── */
+.aff-section{background:linear-gradient(135deg,#0a0f1e 0%,#12182e 100%);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.aff-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1rem;margin-bottom:2rem}
+.aff-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.25rem;display:flex;flex-direction:column;gap:.6rem;position:relative;transition:transform .2s,border-color .25s;overflow:hidden}
+.aff-card:hover{transform:translateY(-3px);border-color:var(--bhi)}
+.aff-card.hot{border-color:rgba(255,176,32,.4)}
+.aff-badge{position:absolute;top:.75rem;right:.75rem;font-size:.58rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:.2rem .55rem;border-radius:100px}
+.aff-badge.hot{background:rgba(255,176,32,.2);color:var(--gold)}
+.aff-badge.new{background:rgba(255,48,112,.2);color:var(--pink)}
+.aff-ico{font-size:2rem;line-height:1}
+.aff-name{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.1rem;letter-spacing:1px;color:var(--white);line-height:1.2}
+.aff-desc{font-size:.75rem;color:var(--muted);line-height:1.5;flex:1}
+.aff-price{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;color:var(--gold);line-height:1}
+.aff-price span{font-family:'Inter',sans-serif;font-size:.68rem;color:var(--muted);font-weight:400;margin-left:.3rem}
+.aff-btn{display:block;padding:.65rem;background:linear-gradient(135deg,var(--gold),#d4880a);border-radius:7px;color:#000;font-family:'Barlow Condensed',sans-serif;font-size:.9rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;text-align:center;transition:opacity .2s}
+.aff-btn:hover{opacity:.88}
+.aff-disclaimer{font-size:.65rem;color:var(--muted);text-align:center;margin-top:.5rem}
+/* Telegram CTA */
+.tg-cta{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;background:linear-gradient(135deg,#0d1f3a,#0a1525);border:1px solid rgba(0,229,176,.2);border-radius:14px;padding:1.5rem 2rem;margin-top:.5rem}
+.tg-cta-text h3{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:2px;color:var(--white);margin-bottom:.3rem}
+.tg-cta-text p{font-size:.8rem;color:var(--muted);line-height:1.5;max-width:420px}
+.tg-btn{flex-shrink:0;display:inline-flex;align-items:center;gap:.5rem;padding:.75rem 1.5rem;background:var(--teal);border-radius:8px;color:#000;font-family:'Barlow Condensed',sans-serif;font-size:1rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;white-space:nowrap;transition:opacity .2s}
+.tg-btn:hover{opacity:.88}
+@media(max-width:600px){.tg-cta{flex-direction:column;text-align:center}.tg-cta-text p{max-width:100%}}
 </style>
 </head>
 <body>
@@ -198,6 +223,7 @@ footer{border-top:1px solid var(--border);padding:2.5rem 1.75rem;text-align:cent
   <ul class="nav-links">
     <li><a href="#news">Новости</a></li>
     <li><a href="#screenshots">Скриншоты</a></li>
+    <li><a href="#offers">Купить</a></li>
     <li><a href="#platforms">Цены</a></li>
     <li><a href="https://www.rockstargames.com/VI" target="_blank" rel="noopener noreferrer">Официально ↗</a></li>
   </ul>
@@ -210,6 +236,7 @@ footer{border-top:1px solid var(--border);padding:2.5rem 1.75rem;text-align:cent
 <div class="mobile-menu" id="mobile-menu">
   <a href="#news" onclick="toggleMenu()">Новости</a>
   <a href="#screenshots" onclick="toggleMenu()">Скриншоты</a>
+  <a href="#offers" onclick="toggleMenu()">Купить</a>
   <a href="#platforms" onclick="toggleMenu()">Цены</a>
   <a href="https://www.rockstargames.com/VI" target="_blank" rel="noopener noreferrer" onclick="toggleMenu()">Официальный сайт ↗</a>
 </div>
@@ -255,6 +282,84 @@ footer{border-top:1px solid var(--border);padding:2.5rem 1.75rem;text-align:cent
     <button class="rbtn" id="nbtn" onclick="refreshNews()">↻ Обновить</button>
   </div>
   <div id="news-box"></div>
+</div>
+
+<div class="divider"></div>
+
+<div class="aff-section">
+<div class="wrap" id="offers">
+  <div class="sec-head">
+    <div class="sec-eye">Партнёрские предложения · Plati.Market</div>
+    <div class="sec-title">КУПИТЬ GTA VI <em>В РОССИИ</em></div>
+    <div class="sec-bar"></div>
+  </div>
+
+  <div class="aff-grid">
+
+    <div class="aff-card hot">
+      <span class="aff-badge hot">🔥 Хит</span>
+      <div class="aff-ico">🎮</div>
+      <div class="aff-name">GTA VI — Xbox Series X|S</div>
+      <div class="aff-desc">Цифровой ключ предзаказа для аккаунта Xbox. Активация в любом регионе. Предзагрузка с 12 ноября.</div>
+      <div class="aff-price">5 990 ₽<span>Plati.Market</span></div>
+      <a href="https://plati.market/itm/grand-theft-auto-vi-xbox-series-gta-6-gta-pre-order-key/5947903" target="_blank" rel="noopener noreferrer sponsored" class="aff-btn">Купить ключ →</a>
+    </div>
+
+    <div class="aff-card">
+      <span class="aff-badge new">PS5</span>
+      <div class="aff-ico">🎮</div>
+      <div class="aff-name">GTA VI — PlayStation 5</div>
+      <div class="aff-desc">Пополнение PSN-кошелька через турецкий или индийский аккаунт. Самый выгодный способ для PS5.</div>
+      <div class="aff-price">от 8 800 ₽<span>через посредника</span></div>
+      <a href="https://plati.market/itm/5947903" target="_blank" rel="noopener noreferrer sponsored" class="aff-btn">Купить →</a>
+    </div>
+
+    <div class="aff-card">
+      <div class="aff-ico">🦈</div>
+      <div class="aff-name">GTA Online — Shark Cards</div>
+      <div class="aff-desc">Внутриигровая валюта GTA Online для старта в GTA VI Online. Доступно сразу после релиза.</div>
+      <div class="aff-price">от 699 ₽<span>за карту</span></div>
+      <a href="https://plati.market/art/gta-online-shark-card/2063" target="_blank" rel="noopener noreferrer sponsored" class="aff-btn">Купить →</a>
+    </div>
+
+    <div class="aff-card">
+      <div class="aff-ico">🕹️</div>
+      <div class="aff-name">DualSense — PS5 Controller</div>
+      <div class="aff-desc">Оригинальный геймпад PS5 с адаптивными триггерами и тактильной отдачей. Идеален для GTA VI.</div>
+      <div class="aff-price">от 6 490 ₽<span>Яндекс.Маркет</span></div>
+      <a href="https://market.yandex.ru/search?text=DualSense+PS5+геймпад" target="_blank" rel="noopener noreferrer" class="aff-btn">Смотреть →</a>
+    </div>
+
+    <div class="aff-card">
+      <div class="aff-ico">🎧</div>
+      <div class="aff-name">Игровая гарнитура</div>
+      <div class="aff-desc">Полное погружение в Vice City со звуком 7.1. Поддержка PS5 и Xbox через USB или 3.5 мм.</div>
+      <div class="aff-price">от 3 490 ₽<span>Яндекс.Маркет</span></div>
+      <a href="https://market.yandex.ru/search?text=игровая+гарнитура+PS5+Xbox" target="_blank" rel="noopener noreferrer" class="aff-btn">Смотреть →</a>
+    </div>
+
+    <div class="aff-card">
+      <div class="aff-ico">🪑</div>
+      <div class="aff-name">Игровое кресло</div>
+      <div class="aff-desc">Эргономичное кресло для долгих сессий в GTA VI. Поясничная поддержка, регулировка наклона.</div>
+      <div class="aff-price">от 12 990 ₽<span>AliExpress</span></div>
+      <a href="https://aliexpress.ru/wholesale?SearchText=gaming+chair+игровое+кресло" target="_blank" rel="noopener noreferrer" class="aff-btn">Смотреть →</a>
+    </div>
+
+  </div>
+
+  <p class="aff-disclaimer">* Партнёрские ссылки. При покупке сайт получает комиссию — цена для вас не меняется.</p>
+
+  <!-- Telegram CTA -->
+  <div class="tg-cta">
+    <div class="tg-cta-text">
+      <h3>📢 Подпишись на Telegram</h3>
+      <p>Первым узнавай о новостях GTA VI, скидках на предзаказ и эксклюзивных материалах. Уже 0 подписчиков — присоединяйся!</p>
+    </div>
+    <a href="https://t.me/gta6tracker_ru" target="_blank" rel="noopener noreferrer" class="tg-btn">✈️ Подписаться</a>
+  </div>
+
+</div>
 </div>
 
 <div class="divider"></div>
