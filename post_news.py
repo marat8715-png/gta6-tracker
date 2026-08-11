@@ -99,7 +99,11 @@ def save_hashes(hashes):
         json.dump(list(hashes)[-300:], f)
 
 def clean_html(text):
-    return re.sub(r'<[^>]+>', '', text or '').strip()
+    import html
+    text = re.sub(r'<[^>]+>', ' ', text or '')  # strip tags
+    text = html.unescape(text)                    # decode &nbsp; &amp; etc
+    text = re.sub(r'\s+', ' ', text).strip()    # collapse whitespace
+    return text
 
 def make_message(item):
     title = clean_html(item['title'])
