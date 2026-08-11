@@ -13,25 +13,22 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+      - run: pip install requests
 
-      - name: Install dependencies
-        run: pip install requests
-
-      - name: Post news to Telegram
+      - name: Debug bot membership
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHANNEL:   ${{ secrets.TELEGRAM_CHANNEL }}
-        run: python post_news.py 2>&1 | tee last_run.log
+          TELEGRAM_CHANNEL: ${{ secrets.TELEGRAM_CHANNEL }}
+        run: python debug_bot.py 2>&1 | tee last_run.log
 
-      - name: Save logs and hashes
+      - name: Save log
         if: always()
         run: |
           git config user.email "bot@github.com"
           git config user.name "GTA6 Bot"
-          git add posted_hashes.json last_run.log 2>/dev/null || true
-          git diff --staged --quiet || git commit -m "📋 Save run log [skip ci]"
+          git add last_run.log posted_hashes.json 2>/dev/null || true
+          git diff --staged --quiet || git commit -m "📋 Debug log [skip ci]"
           git push || true
