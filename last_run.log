@@ -1,10 +1,33 @@
-Bot ID: 8614212133, username: gta6trackerbot
+=== GTA VI Telegram Bot ===
+Token: 8614212133:A...
+Channel raw: 'GTAVITracker'
+Bot: gta6trackerbot | ok=True
 
-Checking bot membership in -1004401509809...
-Result: {'ok': True, 'result': {'user': {'id': 8614212133, 'is_bot': True, 'first_name': 'GTA6Tracker', 'username': 'gta6trackerbot'}, 'status': 'administrator', 'can_be_edited': False, 'can_manage_chat': True, 'can_change_info': True, 'can_post_messages': True, 'can_edit_messages': True, 'can_delete_messages': True, 'can_invite_users': True, 'can_restrict_members': True, 'can_promote_members': True, 'can_manage_video_chats': True, 'can_post_stories': True, 'can_edit_stories': True, 'can_delete_stories': True, 'can_manage_direct_messages': True, 'is_anonymous': False, 'can_manage_voice_chats': True}}
+Searching for channel...
+  Testing channel: '@GTAVITracker'
+    → ok=True | channel
+    ✅ Found! chat_id=-1004401509809, title=GTAVI Tracker
 
-Attempting test message...
-sendMessage result: {'ok': True, 'result': {'message_id': 6, 'sender_chat': {'id': -1004401509809, 'title': 'GTAVI Tracker', 'username': 'GTAVITracker', 'type': 'channel'}, 'chat': {'id': -1004401509809, 'title': 'GTAVI Tracker', 'username': 'GTAVITracker', 'type': 'channel'}, 'date': 1786459320, 'text': '🤖 Тест подключения GTA VI Tracker Bot', 'has_protected_content': True}}
+Using channel_id: -1004401509809
 
-Attempting with @GTAVITracker...
-Result: {'ok': True, 'result': {'message_id': 7, 'sender_chat': {'id': -1004401509809, 'title': 'GTAVI Tracker', 'username': 'GTAVITracker', 'type': 'channel'}, 'chat': {'id': -1004401509809, 'title': 'GTAVI Tracker', 'username': 'GTAVITracker', 'type': 'channel'}, 'date': 1786459321, 'text': '🤖 Тест подключения', 'has_protected_content': True}}
+Fetching news...
+  Feed https://news.google.com/rss/search?q=GTA+VI+Grand+Theft+Auto: 100 items
+  Feed https://vgtimes.ru/rss.xml: 4 items
+Total: 104 items
+
+  → GTA 6: официальная цена $80 и $100 — всё о предзаказе - vpesports
+  ✅ Posted!
+
+  → Глава Take-Two: игроки охотнее покупают GTA VI за $100, чем за $8
+  ✅ Posted!
+
+  → Фанаты GTA VI хотят спасти жизнь геймера и собирают деньги, чтобы
+  ✅ Posted!
+
+  → Предзаказы Grand Theft Auto VI достигли "беспрецедентного и пораз
+  ✅ Posted!
+
+  → Rockstar назвала дату расширенного показа GTA VI - 66.ру
+  ✅ Posted!
+
+=== Done: 5 posted, 0 errors ===
