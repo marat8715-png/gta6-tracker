@@ -2,8 +2,8 @@ name: 🎮 Auto Post GTA VI News to Telegram
 
 on:
   schedule:
-    - cron: '0 */2 * * *'   # каждые 2 часа
-  workflow_dispatch:          # ручной запуск из GitHub
+    - cron: '0 */2 * * *'
+  workflow_dispatch:
 
 jobs:
   post-news:
@@ -12,11 +12,9 @@ jobs:
       contents: write
 
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
@@ -27,12 +25,13 @@ jobs:
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHANNEL:   ${{ secrets.TELEGRAM_CHANNEL }}
-        run: python post_news.py
+        run: python post_news.py 2>&1 | tee last_run.log
 
-      - name: Save posted hashes back to repo
+      - name: Save logs and hashes
+        if: always()
         run: |
-          git config user.email "bot@github-actions.com"
-          git config user.name  "GTA6 News Bot"
-          git add posted_hashes.json 2>/dev/null || true
-          git diff --staged --quiet || git commit -m "🤖 Update posted news hashes [skip ci]"
+          git config user.email "bot@github.com"
+          git config user.name "GTA6 Bot"
+          git add posted_hashes.json last_run.log 2>/dev/null || true
+          git diff --staged --quiet || git commit -m "📋 Save run log [skip ci]"
           git push || true
