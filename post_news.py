@@ -4,17 +4,44 @@ from datetime import datetime, timezone, timedelta
 from email.utils import parsedate_to_datetime
 import os, json, hashlib, re, sys
 
-BOT_TOKEN   = os.environ['TELEGRAM_BOT_TOKEN']
-CHANNEL     = os.environ.get('TELEGRAM_CHANNEL', '@GTAVITracker')
+BOT_TOKEN   = os.environ['TELEGRAM_BOT_TOKEN'].strip()
+CHANNEL_RAW = os.environ.get('TELEGRAM_CHANNEL', 'GTAVITracker').strip()
 SITE_URL    = 'https://marat8715-png.github.io/gta6-tracker/'
 HASHES_FILE = 'posted_hashes.json'
 
 RSS_FEEDS = [
     'https://news.google.com/rss/search?q=GTA+VI+Grand+Theft+Auto&hl=ru&gl=RU&ceid=RU:ru',
     'https://vgtimes.ru/rss.xml',
-    'https://gamemag.ru/feed',
 ]
 HEADERS = {'User-Agent': 'Mozilla/5.0 (compatible; GTABot/1.0)'}
+
+def tg(method, **kwargs):
+    r = requests.post(
+        f'https://api.telegram.org/bot{BOT_TOKEN}/{method}',
+        json=kwargs, timeout=15
+    )
+    return r.json()
+
+def find_channel():
+    """Try different channel ID formats and return working one"""
+    candidates = []
+    raw = CHANNEL_RAW.lstrip('@')
+    candidates = [f'@{raw}', raw, f'@{raw.lower()}', raw.lower()]
+
+    for candidate in candidates:
+        print(f'  Testing channel: {repr(candidate)}')
+        result = tg('getChat', chat_id=candidate)
+        print(f'    → ok={result.get("ok")} | {result.get("description","") or result.get("result",{}).get("type","")}')
+        if result.get('ok'):
+            chat_id = result['result']['id']
+            title   = result['result'].get('title','?')
+            print(f'    ✅ Found! chat_id={chat_id}, title={title}')
+            return str(chat_id)
+
+    print('  ❌ Channel not found via username. Trying getUpdates...')
+    upd = tg('getUpdates', limit=10, allowed_updates=['channel_post'])
+    print(f'  getUpdates: {upd}')
+    return None
 
 def fetch_feed(url):
     try:
@@ -36,13 +63,13 @@ def fetch_feed(url):
                     continue
             if title:
                 items.append({'title': title, 'link': link, 'pubDate': pub, 'description': desc})
-        print(f'  [{url[:55]}] → {len(items)} items')
+        print(f'  Feed {url[:60]}: {len(items)} items')
         return items
     except Exception as e:
-        print(f'  [FEED ERROR] {url[:55]}: {e}')
+        print(f'  Feed error {url[:50]}: {e}')
         return []
 
-def get_all_news():
+def get_news():
     seen, results = set(), []
     for url in RSS_FEEDS:
         for item in fetch_feed(url):
@@ -52,7 +79,7 @@ def get_all_news():
                 results.append(item)
     return results
 
-def is_recent(pub_str, hours=48):
+def is_recent(pub_str, hours=9999):
     try:
         pub_dt = parsedate_to_datetime(pub_str)
         return (datetime.now(timezone.utc) - pub_dt) <= timedelta(hours=hours)
@@ -88,59 +115,58 @@ def make_message(item):
         f'🌐 <a href="{SITE_URL}">GTA VI TRACKER</a>'
     )
 
-def send(text):
-    url = f'https://api.telegram.org/bot{BOT_TOKEN}/sendMessage'
-    payload = {'chat_id': CHANNEL, 'text': text,
-                'parse_mode': 'HTML', 'disable_web_page_preview': False}
-    r = requests.post(url, json=payload, timeout=15)
-    resp = r.json()
-    print(f'  [TG RESPONSE] ok={resp.get("ok")} | {resp}')
-    return resp
-
 def main():
     print(f'=== GTA VI Telegram Bot ===')
-    print(f'Channel: {CHANNEL}')
-    print(f'Bot token: {BOT_TOKEN[:10]}...')
-    print(f'\nFetching RSS feeds...')
+    print(f'Token: {BOT_TOKEN[:12]}...')
+    print(f'Channel raw: {repr(CHANNEL_RAW)}')
 
-    items = get_all_news()
-    print(f'Total unique items: {len(items)}')
+    # Verify bot itself
+    me = tg('getMe')
+    print(f'Bot: {me.get("result",{}).get("username","??")} | ok={me.get("ok")}')
+
+    # Find working channel ID
+    print('\nSearching for channel...')
+    channel_id = find_channel()
+    if not channel_id:
+        print('FATAL: Cannot find channel. Exiting.')
+        sys.exit(1)
+
+    print(f'\nUsing channel_id: {channel_id}')
+
+    # Fetch news
+    print('\nFetching news...')
+    items = get_news()
+    print(f'Total: {len(items)} items')
 
     posted, had_before = load_hashes()
-    print(f'Already posted hashes: {len(posted)} | First run: {not had_before}')
     updated = set(posted)
+    max_posts = 5 if not had_before else 10
 
-    time_limit = 48 if had_before else 9999
-    max_posts  = 10 if had_before else 5
-
-    count, errors = 0, 0
-    for item in items:
-        if count >= max_posts:
-            break
+    count = errors = 0
+    for item in items[:max_posts*3]:
+        if count >= max_posts: break
         h = hashlib.md5((item['link'] or item['title']).encode()).hexdigest()
         if h in posted:
-            print(f'  Skip (dup): {item["title"][:55]}')
-            continue
-        if not is_recent(item['pubDate'], hours=time_limit):
-            print(f'  Skip (old): {item["title"][:55]}')
             continue
 
-        print(f'  Posting: {item["title"][:65]}')
-        result = send(make_message(item))
+        print(f'\n  → {item["title"][:65]}')
+        result = tg('sendMessage',
+                    chat_id=channel_id,
+                    text=make_message(item),
+                    parse_mode='HTML',
+                    disable_web_page_preview=False)
 
         if result.get('ok'):
             updated.add(h)
             count += 1
-            print(f'  ✅ Success!')
+            print(f'  ✅ Posted!')
         else:
             errors += 1
-            print(f'  ❌ Error: {result.get("description","?")} (code {result.get("error_code","?")})')
+            print(f'  ❌ {result.get("error_code")} {result.get("description")}')
 
     save_hashes(updated)
     print(f'\n=== Done: {count} posted, {errors} errors ===')
-
     if errors > 0 and count == 0:
-        print('FATAL: All posts failed. Check bot permissions in channel.')
         sys.exit(1)
 
 if __name__ == '__main__':
