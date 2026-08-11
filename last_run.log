@@ -1,325 +1,63 @@
 === GTA VI Telegram Bot ===
-Channel: @GTAVITracker
-Bot token: 8614212133...
+Token: 8614212133:A...
+Channel raw: 'GTAVITracker'
+Bot: gta6trackerbot | ok=True
 
-Fetching RSS feeds...
-  [https://news.google.com/rss/search?q=GTA+VI+Grand+Theft] → 100 items
-  [https://vgtimes.ru/rss.xml] → 4 items
-  [FEED ERROR] https://gamemag.ru/feed: 404 Client Error: Not Found for url: https://gamemag.ru/feed
-Total unique items: 104
-Already posted hashes: 0 | First run: True
-  Posting: GTA 6: официальная цена $80 и $100 — всё о предзаказе - vpesports
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: Фанаты GTA VI хотят спасти жизнь геймера и собирают деньги, чтобы
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: Предзаказы Grand Theft Auto VI достигли "беспрецедентного и пораз
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: Rockstar назвала дату расширенного показа GTA VI - 66.ру
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: Эксклюзивный трейлер Grand Theft Auto VI и продажа Electronic Art
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: GTA VI покажут эксклюзивно на Netflix 27 августа - Techora.ru
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: Где превью GTA VI? Геймеры готовы к очередному переносу релиза - 
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: GTA 6 за $80 или $100: сравнение изданий и механики RDR2 - vpespo
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: «Мы заслуживаем независимость»: Take-Two не хочет продаваться Net
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: Rockstar Games получила от Netflix круглую сумму за временную экс
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: GTA 6 без диска: физические копии — только код загрузки - vpespor
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: Только не надо потом жаловаться на повышение цен: игроки охотно п
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: Глава Take-Two: 80 долларов за Grand Theft Auto VI — невероятно в
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: Аналитики прогнозируют рекордную стоимость GTA 6 - vpesports.game
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: Grand Theft Auto VI могла стоить дороже, но Take-Two не хотела вы
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: Бывший аниматор Rockstar Games считает, что Grand Theft Auto VI м
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: GTA 6 физическая версия без диска: факты, слухи, предзаказы 2026 
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: Глава Take-Two объяснил, почему Grand Theft Auto VI не выйдет на 
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: Новостей о GTA VI Online пока не будет, а у босса Take-Two есть «
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: GTA 6: заработок реальных денег – правда от HipHopGamer - vpespor
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: Grand Theft Auto VI: расширенную презентацию покажут на YouTube и
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: Презентация Grand Theft Auto VI будет смотреться как сериал от Ne
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: Коды активации GTA VI получили региональные ограничения — Rocksta
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: Стало известно, почему Rockstar решила показать GTA VI на Netflix
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: Издатель Grand Theft Auto VI: Облачный гейминг готовится к взлёту
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: Издатель Grand Theft Auto VI: Большинству игроков диски не нужны 
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: Rockstar обновила сайт GTA VI — игроки ждут новые материалы и ано
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: Инсайдер рассказал, когда могут показать третий трейлер GTA VI - 
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: GTA 6 и конец гонки за графикой – что случится с играми после гла
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: Ветеран Rockstar раскритиковал региональную блокировку ключей Gra
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: «Смотреть будут все, и вы тоже»: глава Take-Two призвал всех подп
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: Ветеран Rockstar допустил ещё один перенос даты выхода GTA VI - i
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: Дорогая версия GTA VI лидирует по предварительным заказам - Overc
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: GTA VI снова перенесут? Ветеран Rockstar сомневается в дате 19 но
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: Take-Two рассказали о предзаказах GTA VI и своем отношении к выпу
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: Rockstar в вакансиях намекнула на ключевую функцию GTA VI - ixbt.
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: Создатель GTA V рад, что ему не приходится работать над GTA VI — 
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: 25 июня откроются предзаказы на Grand Theft Auto VI - Rockstar Ga
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: Издатель GTA VI начал удалять популярные нейрослоп «записи» игров
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: Показ Grand Theft Auto VI на Netflix продлится 20 минут — ожидает
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: «Я просто хотел попасть в игру»: актёр озвучки GTA V пробовался б
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: Netflix представит "расширенный взгляд" на Grand Theft Auto VI - 
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: Третий трейлер Grand Theft Auto VI могут показать со дня на день 
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: В ближайшие дни фанатов GTA VI может ждать сюрприз — инсайдер ожи
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: Rockstar обещает показать «расширенный взгляд» на GTA VI 27 авгус
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: Предзаказы на Grand Theft Auto VI откроются 25 июня - Rockstar Ga
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: Бывший продюсер GTA V и RDR: только на консолях GTA VI выходит не
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: В GTA IV добавили миссии из отменённой игры, но маловероятно, что
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: GTA VI на пороге: чем важен новый релиз Rockstar - Igromania.ru
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: Официально: третий трейлер GTA VI покажут 27 августа - iPhones.ru
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: Россиян и жителей СНГ обманывают продавцы и «тестировщики» GTA VI
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: Из-за GTA VI закроется канадский завод — сотрудники собираются ис
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: GTA VI запретили в ряде стран ещё до релиза — Россия попала в спи
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: GTA 6 не вышла 26 мая 2026: дата переноса и что будет дальше - vp
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: Код в мешке: Rockstar снабдила «дисковую» версию GTA VI для PS5 р
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: Глава Take-Two сравнил показ GTA VI с шоу Netflix - Techora.ru
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: Предзаказы на GTA VI стартуют в четверг, игра будет стоить $79,99
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: Бывший разработчик из Rockstar отказался покупать GTA VI после ув
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: Digital Foundry считает, что GTA VI не будет работать в 60 FPS из
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: Официально: Rockstar Games откроет предзаказы на Grand Theft Auto
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: Никто никуда не торопится: Штраус Зельник объяснил, почему Grand 
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: Все же $100: часть контента в Grand Theft Auto VI будет доступна 
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: Официально: Grand Theft Auto VI будет стоить 80 долларов — это од
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: Началось! Предзаказы на Grand Theft Auto VI для PlayStation 5 и X
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: Издатель GTA VI поделился новостями о проекте — босс Take-Two нап
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: Новое видео по GTA VI – что анонсировали Rockstar - Cursorinfo
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: Проблемы с предзаказами GTA VI: в PS5-изданиях нашли региональные
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: PlayStation Store официально объявила даты и время выхода Grand T
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: Rockstar Games открыла предзаказы на Grand Theft Auto VI - Rozetk
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: Xbox прокомментировал заявление о восьмикратном превосходстве Pla
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: Take-Two заявила о рекордном спросе на GTA VI перед ноябрьским ре
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: Стала известна стоимость GTA 6 в ОАЭ - russianemirates.com
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: Геймеры «отменяют будущие предзаказы» GTA VI из-за одного кадра —
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: Grand Theft Auto VI заработает 5,2 млрд долларов за первую неделю
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: Разработчики назвали дату предзаказа GTA 6: что известно об игре,
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: Grand Theft Auto VI всё же выпустят на дисках, но не сразу — СМИ 
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: Цена GTA VI не станет новым стандартом для всей индустрии, считаю
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: Этих тачек в GTA ты ещё не видел: что известно про новые автомоби
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: Для GTA VI создали огромную интерактивную карту. Её постоянно обн
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: Бывший сотрудник Rockstar Games объяснил, почему Grand Theft Auto
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: Просто бумажка с кодом на загрузку: физические копии Grand Theft 
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: «Всё кончено»: Сегодня должна была выйти GTA VI — в день несостоя
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: Хотите одними из первых увидеть новую GTA VI? Вам понадобится акк
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: Sony усилила маркетинговое партнерство с Rockstar: на некоторых с
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: Консоли не тянут: Grand Theft Auto VI будет работать только при 3
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: Объявлена цена Grand Theft Auto VI - Sibnet Новости
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: Стала известна стоимость новой GTA VI - URA.RU
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: GTA VI — самая дорогая игра в истории? Появились предположительны
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: Предзаказ Grand Theft Auto VI: без диска и только с цифровыми бон
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: Скоро можно будет увидеть, как выглядит GTA VI. Вот когда - Onlín
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: GTA VI: дата выхода и сюжет новой части франшизы Grand Theft Auto
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: Работать будет некому: компания закроется на сутки из-за релиза G
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: Специалисты оценили отказ Rockstar Games от выпуска Grand Theft A
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: Игроки заметили странность в новом тизере Grand Theft Auto VI от 
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: В сети нашли возможные цены изданий GTA VI — от 90 евро до нескол
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: Игроки считают, что авторы GTA VI затроллили покупателей Ultimate
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: Штраус Зельник: GTA VI опаздывает на 18 месяцев — релиз предполаг
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: Rockstar раскрыла детали предзаказа GTA VI и предзагрузки — Ultim
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: GTA VI собираются продавать в России за 9999 рублей - ixbt.games
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: Магазины начали отказываться от «физических» изданий GTA VI - ixb
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: Глава Take-Two заявил, что компания не продаётся — даже Netflix
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: GTA 6 может стать больше чем игрой — Rockstar якобы готовит целую
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: «Я просто хочу поиграть в GTA VI»: видео игрока из реанимации соб
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
-  Posting: Издание Grand Theft Auto 6 за $100 обгоняет по предзаказам базово
-  [TG RESPONSE] ok=False | {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
-  ❌ Error: Forbidden: bot is not a member of the channel chat (code 403)
+Searching for channel...
+  Testing channel: '@GTAVITracker'
+    → ok=True | channel
+    ✅ Found! chat_id=-1004401509809, title=GTAVI Tracker
 
-=== Done: 0 posted, 104 errors ===
-FATAL: All posts failed. Check bot permissions in channel.
+Using channel_id: -1004401509809
+
+Fetching news...
+  Feed https://news.google.com/rss/search?q=GTA+VI+Grand+Theft+Auto: 100 items
+  Feed https://vgtimes.ru/rss.xml: 4 items
+Total: 104 items
+
+  → GTA 6: официальная цена $80 и $100 — всё о предзаказе - vpesports
+  ❌ 403 Forbidden: bot is not a member of the channel chat
+
+  → Фанаты GTA VI хотят спасти жизнь геймера и собирают деньги, чтобы
+  ❌ 403 Forbidden: bot is not a member of the channel chat
+
+  → Предзаказы Grand Theft Auto VI достигли "беспрецедентного и пораз
+  ❌ 403 Forbidden: bot is not a member of the channel chat
+
+  → Покупатели предпочитают более дорогую версию: Ultimate Edition GT
+  ❌ 403 Forbidden: bot is not a member of the channel chat
+
+  → Rockstar назвала дату расширенного показа GTA VI - 66.ру
+  ❌ 403 Forbidden: bot is not a member of the channel chat
+
+  → Эксклюзивный трейлер Grand Theft Auto VI и продажа Electronic Art
+  ❌ 403 Forbidden: bot is not a member of the channel chat
+
+  → GTA VI покажут эксклюзивно на Netflix 27 августа - Techora.ru
+  ❌ 403 Forbidden: bot is not a member of the channel chat
+
+  → Где превью GTA VI? Геймеры готовы к очередному переносу релиза - 
+  ❌ 403 Forbidden: bot is not a member of the channel chat
+
+  → GTA 6 за $80 или $100: сравнение изданий и механики RDR2 - vpespo
+  ❌ 403 Forbidden: bot is not a member of the channel chat
+
+  → «Мы заслуживаем независимость»: Take-Two не хочет продаваться Net
+  ❌ 403 Forbidden: bot is not a member of the channel chat
+
+  → Rockstar Games получила от Netflix круглую сумму за временную экс
+  ❌ 403 Forbidden: bot is not a member of the channel chat
+
+  → GTA 6 без диска: физические копии — только код загрузки - vpespor
+  ❌ 403 Forbidden: bot is not a member of the channel chat
+
+  → Только не надо потом жаловаться на повышение цен: игроки охотно п
+  ❌ 403 Forbidden: bot is not a member of the channel chat
+
+  → Глава Take-Two: 80 долларов за Grand Theft Auto VI — невероятно в
+  ❌ 403 Forbidden: bot is not a member of the channel chat
+
+  → Аналитики прогнозируют рекордную стоимость GTA 6 - vpesports.game
+  ❌ 403 Forbidden: bot is not a member of the channel chat
+
+=== Done: 0 posted, 15 errors ===
