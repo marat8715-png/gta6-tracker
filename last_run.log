@@ -1,63 +1,10 @@
-=== GTA VI Telegram Bot ===
-Token: 8614212133:A...
-Channel raw: 'GTAVITracker'
-Bot: gta6trackerbot | ok=True
+Bot ID: 8614212133, username: gta6trackerbot
 
-Searching for channel...
-  Testing channel: '@GTAVITracker'
-    → ok=True | channel
-    ✅ Found! chat_id=-1004401509809, title=GTAVI Tracker
+Checking bot membership in -1004401509809...
+Result: {'ok': False, 'error_code': 400, 'description': 'Bad Request: member list is inaccessible'}
 
-Using channel_id: -1004401509809
+Attempting test message...
+sendMessage result: {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
 
-Fetching news...
-  Feed https://news.google.com/rss/search?q=GTA+VI+Grand+Theft+Auto: 100 items
-  Feed https://vgtimes.ru/rss.xml: 4 items
-Total: 104 items
-
-  → GTA 6: официальная цена $80 и $100 — всё о предзаказе - vpesports
-  ❌ 403 Forbidden: bot is not a member of the channel chat
-
-  → Фанаты GTA VI хотят спасти жизнь геймера и собирают деньги, чтобы
-  ❌ 403 Forbidden: bot is not a member of the channel chat
-
-  → Предзаказы Grand Theft Auto VI достигли "беспрецедентного и пораз
-  ❌ 403 Forbidden: bot is not a member of the channel chat
-
-  → Покупатели предпочитают более дорогую версию: Ultimate Edition GT
-  ❌ 403 Forbidden: bot is not a member of the channel chat
-
-  → Rockstar назвала дату расширенного показа GTA VI - 66.ру
-  ❌ 403 Forbidden: bot is not a member of the channel chat
-
-  → Эксклюзивный трейлер Grand Theft Auto VI и продажа Electronic Art
-  ❌ 403 Forbidden: bot is not a member of the channel chat
-
-  → GTA VI покажут эксклюзивно на Netflix 27 августа - Techora.ru
-  ❌ 403 Forbidden: bot is not a member of the channel chat
-
-  → Где превью GTA VI? Геймеры готовы к очередному переносу релиза - 
-  ❌ 403 Forbidden: bot is not a member of the channel chat
-
-  → GTA 6 за $80 или $100: сравнение изданий и механики RDR2 - vpespo
-  ❌ 403 Forbidden: bot is not a member of the channel chat
-
-  → «Мы заслуживаем независимость»: Take-Two не хочет продаваться Net
-  ❌ 403 Forbidden: bot is not a member of the channel chat
-
-  → Rockstar Games получила от Netflix круглую сумму за временную экс
-  ❌ 403 Forbidden: bot is not a member of the channel chat
-
-  → GTA 6 без диска: физические копии — только код загрузки - vpespor
-  ❌ 403 Forbidden: bot is not a member of the channel chat
-
-  → Только не надо потом жаловаться на повышение цен: игроки охотно п
-  ❌ 403 Forbidden: bot is not a member of the channel chat
-
-  → Глава Take-Two: 80 долларов за Grand Theft Auto VI — невероятно в
-  ❌ 403 Forbidden: bot is not a member of the channel chat
-
-  → Аналитики прогнозируют рекордную стоимость GTA 6 - vpesports.game
-  ❌ 403 Forbidden: bot is not a member of the channel chat
-
-=== Done: 0 posted, 15 errors ===
+Attempting with @GTAVITracker...
+Result: {'ok': False, 'error_code': 403, 'description': 'Forbidden: bot is not a member of the channel chat'}
