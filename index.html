@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GTA VI TRACKER — Новости, Скриншоты, Цены | Россия и СНГ</title>
+<meta name="description" content="Неофициальный трекер GTA VI для России и СНГ: свежие новости, официальные скриншоты, обратный отсчёт до релиза 19 ноября 2026 и цены на всех платформах.">
+
+<!-- Open Graph / Telegram / VK / Twitter -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="GTA VI TRACKER — Россия и СНГ">
+<meta property="og:description" content="Свежие новости, официальные скриншоты и обратный отсчёт до релиза GTA VI — 19 ноября 2026">
+<meta property="og:image" content="https://media.gtaboom.com/variants/1280/media/images/55/92/gtavi-wallpaper-artwork-jason-and-lucia-01-with-logos-landscape.jpg">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="720">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="GTA VI TRACKER — Россия и СНГ">
+<meta name="twitter:description" content="Свежие новости, официальные скриншоты, обратный отсчёт — 19 ноября 2026">
+<meta name="twitter:image" content="https://media.gtaboom.com/variants/1280/media/images/55/92/gtavi-wallpaper-artwork-jason-and-lucia-01-with-logos-landscape.jpg">
+
+<!-- Favicon -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%230D1117'/><text y='.9em' font-size='72' x='50%' text-anchor='middle' fill='%23FF3070' font-family='Arial Black'>VI</text></svg>">
+
+<!-- Fonts with preconnect -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:ital,wght@0,600;0,700;0,900;1,700;1,900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ── TOKENS ─────────────────────────────────────── */
+:root {
+  --bg:    #0D1117;
+  --card:  #1C2535;
+  --pink:  #FF3070;
+  --pink2: rgba(255,48,112,.15);
+  --teal:  #00E5B0;
+  --gold:  #FFB020;
+  --white: #FFFFFF;
+  --body:  #C8D8F0;
+  --muted: #8899BB;
+  --border:rgba(255,48,112,.22);
+  --bhi:   rgba(255,48,112,.5);
+  --glow:  rgba(255,48,112,.4);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--white);font-family:'Inter',sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+
+/* ── NAV ─────────────────────────────────────────── */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 2rem;background:rgba(13,17,23,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.nav-logo{font-family:'Bebas Neue',sans-serif;font-size:1.45rem;letter-spacing:3px;color:var(--white)}
+.nav-logo em{color:var(--pink);font-style:normal;text-shadow:0 0 16px var(--glow)}
+.nav-links{display:flex;gap:1.75rem;list-style:none}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:.75rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;transition:color .2s}
+.nav-links a:hover{color:var(--teal)}
+.nav-badge{display:flex;align-items:center;gap:.45rem;font-size:.7rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--teal)}
+/* Mobile hamburger */
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none}
+.burger span{display:block;width:22px;height:2px;background:var(--muted);border-radius:2px;transition:all .25s}
+.mobile-menu{display:none;position:fixed;top:56px;left:0;right:0;background:rgba(13,17,23,.97);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:1.25rem 2rem;z-index:199}
+.mobile-menu.open{display:block}
+.mobile-menu a{display:block;padding:.65rem 0;color:var(--muted);text-decoration:none;font-size:.85rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;border-bottom:1px solid var(--border);transition:color .2s}
+.mobile-menu a:last-child{border-bottom:none}
+.mobile-menu a:hover{color:var(--teal)}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--teal);animation:blink 2s ease-in-out infinite;flex-shrink:0}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+
+/* ── HERO ─────────────────────────────────────────── */
+.hero{position:relative;height:100vh;min-height:640px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;overflow:hidden;padding-top:56px}
+.hero-sky{position:absolute;inset:0;background:radial-gradient(ellipse 130% 70% at 50% 0%,#1a0535 0%,transparent 65%),radial-gradient(ellipse 90% 60% at 80% 110%,#041828 0%,transparent 60%),linear-gradient(180deg,#080214 0%,#0D1117 100%)}
+.grid-wrap{position:absolute;bottom:0;left:-10%;right:-10%;height:52%;perspective:700px;perspective-origin:50% 0}
+.grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,48,112,.2) 1px,transparent 1px),linear-gradient(90deg,rgba(255,48,112,.2) 1px,transparent 1px);background-size:70px 70px;transform:rotateX(66deg);transform-origin:50% 0;animation:gridScroll 7s linear infinite;mask-image:linear-gradient(180deg,transparent 0%,black 25%);-webkit-mask-image:linear-gradient(180deg,transparent 0%,black 25%)}
+@keyframes gridScroll{from{background-position:0 0}to{background-position:0 70px}}
+.hline{position:absolute;bottom:51%;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--pink),var(--teal),var(--pink),transparent);opacity:.65;box-shadow:0 0 10px var(--pink)}
+.hglow{position:absolute;bottom:0;left:0;right:0;height:45%;background:linear-gradient(0deg,rgba(255,48,112,.15) 0%,transparent 100%)}
+.hero-content{position:relative;z-index:2}
+.eyebrow{display:inline-flex;align-items:center;gap:.5rem;padding:.3rem 1rem;border:1px solid rgba(0,229,176,.35);border-radius:100px;font-size:.68rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--teal);margin-bottom:1.5rem}
+.hero-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(4rem,13vw,10.5rem);line-height:.88;letter-spacing:5px;margin-bottom:.5rem}
+.hero-title .t1{display:block;color:var(--white)}
+.hero-title .t2{display:block;color:var(--pink);text-shadow:0 0 50px var(--glow),0 0 100px rgba(255,48,112,.25);animation:glowPulse 4s ease-in-out infinite}
+@keyframes glowPulse{0%,100%{text-shadow:0 0 50px var(--glow)}50%{text-shadow:0 0 80px var(--glow),0 0 140px rgba(255,48,112,.3)}}
+.sub{font-family:'Barlow Condensed',sans-serif;font-style:italic;font-size:1.05rem;letter-spacing:4px;text-transform:uppercase;color:var(--muted);margin-bottom:2.5rem}
+.countdown{display:flex;align-items:flex-start;gap:.9rem;justify-content:center;margin-bottom:1.4rem}
+.cd-blk{text-align:center}
+.cd-num{font-family:'Bebas Neue',sans-serif;font-size:3.6rem;line-height:1;color:var(--white);display:block;min-width:68px}
+.cd-lbl{font-size:.6rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
+.cd-sep{font-family:'Bebas Neue',sans-serif;font-size:3rem;color:var(--pink);margin-top:.15rem;opacity:.5}
+.rel-date{font-family:'Barlow Condensed',sans-serif;font-size:.95rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold)}
+.scroll-cue{position:absolute;bottom:1.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.35rem;color:var(--muted);font-size:.62rem;letter-spacing:2px;text-transform:uppercase;animation:bob 2.5s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(6px)}}
+
+/* ── SHARED ───────────────────────────────────────── */
+.divider{height:1px;background:linear-gradient(90deg,transparent,var(--pink) 35%,var(--teal) 65%,transparent);opacity:.3}
+.wrap{max-width:1180px;margin:0 auto;padding:4.5rem 1.75rem}
+.sec-head{margin-bottom:2.5rem}
+.sec-eye{font-size:.66rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--teal);margin-bottom:.5rem}
+.sec-title{font-family:'Bebas Neue',sans-serif;font-size:2.6rem;letter-spacing:3px;line-height:1;color:var(--white)}
+.sec-title em{color:var(--pink);font-style:normal}
+.sec-bar{width:52px;height:3px;margin-top:.7rem;background:linear-gradient(90deg,var(--pink),var(--teal));border-radius:2px}
+.row-meta{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.25rem;font-size:.72rem;color:var(--muted)}
+.row-left{display:flex;align-items:center;gap:.5rem}
+.rbtn{background:transparent;border:1px solid var(--border);color:var(--teal);padding:.32rem .85rem;border-radius:100px;cursor:pointer;font-size:.68rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;transition:all .2s}
+.rbtn:hover{background:var(--teal);color:var(--bg);border-color:var(--teal)}
+.rbtn:disabled{opacity:.4;cursor:not-allowed}
+
+/* ── NEWS ─────────────────────────────────────────── */
+.news-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:1.2rem}
+.news-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.4rem;position:relative;overflow:hidden;transition:border-color .25s,transform .2s}
+.news-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--pink),var(--teal));transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.news-card:hover{border-color:var(--bhi);transform:translateY(-3px)}
+.news-card:hover::before{transform:scaleX(1)}
+.n-src{font-size:.63rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--teal);margin-bottom:.55rem}
+.n-title{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.15rem;line-height:1.3;color:var(--white);margin-bottom:.6rem}
+.n-body{font-size:.83rem;color:var(--body);line-height:1.65;margin-bottom:.9rem}
+.n-foot{display:flex;align-items:center;justify-content:space-between}
+.n-date{font-size:.67rem;color:var(--muted)}
+.n-link{font-size:.67rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--pink);text-decoration:none;transition:color .2s}
+.n-link:hover{color:var(--teal)}
+.fade-up{opacity:0;transform:translateY(14px);animation:fadeUp .4s ease forwards}
+@keyframes fadeUp{to{opacity:1;transform:none}}
+
+/* ── SCREENSHOTS GRID ─────────────────────────────── */
+.shots-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+@media(max-width:700px){.shots-grid{grid-template-columns:1fr}}
+@media(min-width:701px) and (max-width:960px){.shots-grid{grid-template-columns:repeat(2,1fr)}}
+.shot{position:relative;border-radius:10px;overflow:hidden;aspect-ratio:16/9;background:var(--card);border:1px solid var(--border)}
+.shot img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s}
+.shot:hover img{transform:scale(1.06)}
+.shot-ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;font-size:.78rem;color:var(--body);text-align:center;padding:1rem;background:var(--card)}
+.shot-ph .ico{font-size:2.2rem;opacity:.6}
+.shot-ph .tag{font-size:.6rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--pink);margin-top:.25rem}
+/* Caption always visible (not hover-only) — fixes mobile */
+.shot-cap{position:absolute;bottom:0;left:0;right:0;padding:.55rem .75rem;background:linear-gradient(0deg,rgba(13,17,23,.95) 0%,transparent 100%);font-size:.7rem;color:var(--body)}
+
+/* ── PLATFORMS ────────────────────────────────────── */
+.plat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.25rem}
+.plat{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.75rem;position:relative;overflow:hidden;transition:transform .2s,border-color .25s}
+.plat:hover{transform:translateY(-4px);border-color:var(--bhi)}
+.plat.top{border-color:rgba(255,48,112,.4)}
+.badge-rec{position:absolute;top:1rem;right:-2rem;background:var(--pink);color:#fff;font-size:.58rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:.28rem 3rem;transform:rotate(45deg)}
+.plat-ico{font-size:2.5rem;display:block;margin-bottom:.9rem;line-height:1}
+.plat-name{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.45rem;letter-spacing:2px;text-transform:uppercase;color:var(--white);margin-bottom:.2rem}
+.plat-sub{font-size:.73rem;color:var(--muted);margin-bottom:1.25rem}
+.plat-price{font-family:'Bebas Neue',sans-serif;font-size:2.4rem;line-height:1;color:var(--pink);text-shadow:0 0 20px var(--glow);display:block;margin-bottom:.2rem}
+.plat-pnote{font-size:.7rem;color:var(--muted);margin-bottom:1.25rem}
+.btn-buy{display:block;width:100%;padding:.8rem;background:linear-gradient(135deg,var(--pink),#b5003a);border:none;border-radius:8px;color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:.95rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;cursor:pointer;text-decoration:none;text-align:center;transition:opacity .2s,transform .15s}
+.btn-buy:hover{opacity:.88;transform:scale(1.02)}
+.btn-sec{background:transparent;border:1px solid var(--border);color:var(--muted)}
+.btn-sec:hover{border-color:var(--teal);color:var(--teal);background:transparent;transform:scale(1.02)}
+.feat{list-style:none;margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid var(--border);display:flex;flex-direction:column;gap:.5rem}
+.feat li{display:flex;gap:.45rem;font-size:.79rem;color:var(--body);line-height:1.5}
+.feat li::before{content:'✓';color:var(--teal);font-weight:700;flex-shrink:0}
+
+/* ── INFO STRIP ───────────────────────────────────── */
+.info-strip{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:1px;border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-top:2rem;background:var(--border)}
+.info-cell{background:var(--card);padding:1.2rem 1.4rem}
+.info-lbl{font-size:.62rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:.35rem}
+.info-val{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.1rem;color:var(--white)}
+.info-val.g{color:var(--gold)}
+.info-val.t{color:var(--teal)}
+
+/* ── FOOTER ───────────────────────────────────────── */
+footer{border-top:1px solid var(--border);padding:2.5rem 1.75rem;text-align:center}
+.foot-logo{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:4px;color:var(--pink);text-shadow:0 0 18px var(--glow);margin-bottom:.7rem}
+.foot-txt{font-size:.73rem;color:var(--muted);line-height:1.7;max-width:540px;margin:0 auto}
+.foot-links{display:flex;gap:1.5rem;justify-content:center;margin-top:1.25rem;list-style:none;flex-wrap:wrap}
+.foot-links a{font-size:.67rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s}
+.foot-links a:hover{color:var(--teal)}
+
+/* ── RESPONSIVE ───────────────────────────────────── */
+@media(max-width:768px){
+  .nav-links,.nav-badge{display:none}
+  .burger{display:flex}
+  .hero-title{font-size:4rem}
+  .cd-num{font-size:2.6rem;min-width:52px}
+  .wrap{padding:3.5rem 1.25rem}
+  .news-grid{grid-template-columns:1fr}
+  .plat-grid{grid-template-columns:1fr}
+  .info-strip{grid-template-columns:1fr 1fr}
+}
+@media(prefers-reduced-motion:reduce){
+  .grid,.hero-title .t2,.scroll-cue,.dot{animation:none}
+  .news-card,.shot img,.plat,.btn-buy{transition:none}
+}
+</style>
+</head>
+<body>
+
+<noscript>
+  <div style="background:#1C2535;color:#C8D8F0;text-align:center;padding:2rem;font-family:sans-serif;font-size:.9rem">
+    Для работы сайта требуется JavaScript. Пожалуйста, включите его в настройках браузера.
+  </div>
+</noscript>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">GTA <em>VI</em> TRACKER</div>
+  <ul class="nav-links">
+    <li><a href="#news">Новости</a></li>
+    <li><a href="#screenshots">Скриншоты</a></li>
+    <li><a href="#platforms">Цены</a></li>
+    <li><a href="https://www.rockstargames.com/VI" target="_blank" rel="noopener noreferrer">Официально ↗</a></li>
+  </ul>
+  <div class="nav-badge"><span class="dot"></span>Live-трекер</div>
+  <button class="burger" id="burger" aria-label="Меню" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#news" onclick="toggleMenu()">Новости</a>
+  <a href="#screenshots" onclick="toggleMenu()">Скриншоты</a>
+  <a href="#platforms" onclick="toggleMenu()">Цены</a>
+  <a href="https://www.rockstargames.com/VI" target="_blank" rel="noopener noreferrer" onclick="toggleMenu()">Официальный сайт ↗</a>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-sky"></div>
+  <div class="grid-wrap"><div class="grid"></div></div>
+  <div class="hline"></div>
+  <div class="hglow"></div>
+  <div class="hero-content">
+    <div class="eyebrow"><span class="dot"></span>Следим за релизом в реальном времени</div>
+    <h1 class="hero-title">
+      <span class="t1">GRAND THEFT AUTO</span>
+      <span class="t2">VI</span>
+    </h1>
+    <p class="sub">Леонида · Вайс-Сити · Джейсон &amp; Лусия</p>
+    <div class="countdown">
+      <div class="cd-blk"><span class="cd-num" id="cd-d">000</span><span class="cd-lbl">Дней</span></div>
+      <span class="cd-sep">:</span>
+      <div class="cd-blk"><span class="cd-num" id="cd-h">00</span><span class="cd-lbl">Часов</span></div>
+      <span class="cd-sep">:</span>
+      <div class="cd-blk"><span class="cd-num" id="cd-m">00</span><span class="cd-lbl">Минут</span></div>
+      <span class="cd-sep">:</span>
+      <div class="cd-blk"><span class="cd-num" id="cd-s">00</span><span class="cd-lbl">Секунд</span></div>
+    </div>
+    <p class="rel-date">🗓 Релиз: 19 ноября 2026 · PS5 &amp; Xbox Series X|S</p>
+  </div>
+  <div class="scroll-cue"><span>Листай вниз</span><span>↓</span></div>
+</div>
+
+<div class="divider"></div>
+
+<!-- NEWS -->
+<div class="wrap" id="news">
+  <div class="sec-head">
+    <div class="sec-eye">Агрегатор из открытых источников</div>
+    <div class="sec-title">ПОСЛЕДНИЕ <em>НОВОСТИ</em></div>
+    <div class="sec-bar"></div>
+  </div>
+  <div class="row-meta">
+    <div class="row-left"><span class="dot"></span><span id="news-ts">встроено · нажмите Обновить для live</span></div>
+    <button class="rbtn" id="nbtn" onclick="refreshNews()">↻ Обновить</button>
+  </div>
+  <div id="news-box"></div>
+</div>
+
+<div class="divider"></div>
+
+<!-- SCREENSHOTS -->
+<div class="wrap" id="screenshots">
+  <div class="sec-head">
+    <div class="sec-eye">Официальные пресс-материалы Rockstar Games</div>
+    <div class="sec-title">СКРИНШОТЫ <em>ИГРЫ</em></div>
+    <div class="sec-bar"></div>
+  </div>
+  <div id="shots-grid" class="shots-grid"></div>
+</div>
+
+<div class="divider"></div>
+
+<!-- PLATFORMS -->
+<div class="wrap" id="platforms">
+  <div class="sec-head">
+    <div class="sec-eye">Официальные цены — предзаказы открыты с 25 июня 2026</div>
+    <div class="sec-title">ПЛАТФОРМЫ <em>И ЦЕНЫ</em></div>
+    <div class="sec-bar"></div>
+  </div>
+  <div class="plat-grid">
+    <div class="plat top">
+      <span class="badge-rec">Рекомендуем</span>
+      <span class="plat-ico">🎮</span>
+      <div class="plat-name">PlayStation 5</div>
+      <div class="plat-sub">Эксклюзивное партнёрство с Sony · Оптимизация под PS5 Pro</div>
+      <span class="plat-price">$79.99</span>
+      <div class="plat-pnote">Standard Edition · Ultimate Edition $99.99 · PS Store</div>
+      <a href="https://store.playstation.com" target="_blank" rel="noopener noreferrer" class="btn-buy">Предзаказать на PS Store →</a>
+      <ul class="feat">
+        <li>4K / 60 fps с HDR10+ и Ray Tracing</li>
+        <li>DualSense: Haptic Feedback и адаптивные триггеры</li>
+        <li>SSD: мгновенные загрузки открытого мира</li>
+        <li>Специальная оптимизация под PS5 Pro</li>
+        <li>Скидка 10% при предзаказе цифровой версии</li>
+      </ul>
+    </div>
+    <div class="plat">
+      <span class="plat-ico">🟢</span>
+      <div class="plat-name">Xbox Series X|S</div>
+      <div class="plat-sub">Series X — полная мощь · Series S — доступный вход</div>
+      <span class="plat-price">$79.99</span>
+      <div class="plat-pnote">Standard Edition · Ultimate Edition $99.99 · Xbox Store</div>
+      <a href="https://www.xbox.com" target="_blank" rel="noopener noreferrer" class="btn-buy">Предзаказать на Xbox →</a>
+      <ul class="feat">
+        <li>4K / 60 fps на Series X</li>
+        <li>1080p / 60 fps на Series S</li>
+        <li>Smart Delivery — одна покупка для всех Xbox</li>
+        <li>Quick Resume: мгновенное возобновление игры</li>
+        <li>Поддержка Xbox Game Pass (дата TBD)</li>
+      </ul>
+    </div>
+    <div class="plat">
+      <span class="plat-ico">💻</span>
+      <div class="plat-name">PC / Windows</div>
+      <div class="plat-sub">Ожидается в 2027 году · Steam / Epic / Rockstar Launcher</div>
+      <span class="plat-price">TBD</span>
+      <div class="plat-pnote">Дата и цена официально не объявлены · исторически +1–2 года</div>
+      <a href="https://store.steampowered.com" target="_blank" rel="noopener noreferrer" class="btn-buy btn-sec">Wishlist на Steam →</a>
+      <ul class="feat">
+        <li>4K / 120fps+ на Ultra-настройках</li>
+        <li>DLSS 4 / FSR 4 / XeSS поддержка</li>
+        <li>Пользовательские моды и тонкая настройка</li>
+        <li>Максимальная трассировка лучей</li>
+        <li>Предположительный выход в 2027 году</li>
+      </ul>
+    </div>
+  </div>
+  <div class="info-strip">
+    <div class="info-cell"><div class="info-lbl">Дата релиза</div><div class="info-val g">19 ноября 2026</div></div>
+    <div class="info-cell"><div class="info-lbl">Разработчик</div><div class="info-val">Rockstar Games</div></div>
+    <div class="info-cell"><div class="info-lbl">Главные герои</div><div class="info-val">Джейсон &amp; Лусия</div></div>
+    <div class="info-cell"><div class="info-lbl">Сеттинг</div><div class="info-val t">Вайс-Сити, Леонида</div></div>
+    <div class="info-cell"><div class="info-lbl">Предзаказы</div><div class="info-val g">Открыты с 25 июня</div></div>
+    <div class="info-cell"><div class="info-lbl">Прогноз D1-продаж</div><div class="info-val">$1.2 млрд</div></div>
+  </div>
+</div>
+
+<footer>
+  <div class="foot-logo">GTA VI TRACKER</div>
+  <p class="foot-txt">Неофициальный трекер для аудитории России и СНГ. Новости из открытых источников: Rockstar Newswire, StopGame, VGTimes, DTF, GameMAG, IGN. Скриншоты — официальный медиакит Rockstar Games. Сайт не аффилирован с Rockstar Games или Take-Two Interactive. GTA VI — торговая марка Take-Two Interactive.</p>
+  <ul class="foot-links">
+    <li><a href="https://www.rockstargames.com/VI" target="_blank" rel="noopener noreferrer">Rockstar</a></li>
+    <li><a href="https://stopgame.ru" target="_blank" rel="noopener noreferrer">StopGame</a></li>
+    <li><a href="https://dtf.ru" target="_blank" rel="noopener noreferrer">DTF</a></li>
+    <li><a href="https://vgtimes.ru" target="_blank" rel="noopener noreferrer">VGTimes</a></li>
+  </ul>
+</footer>
+
+<script>
+/* ── MOBILE MENU ──────────────────────────────────── */
+function toggleMenu(){
+  document.getElementById('mobile-menu').classList.toggle('open');
+}
+document.addEventListener('click',function(e){
+  const menu=document.getElementById('mobile-menu');
+  const burger=document.getElementById('burger');
+  if(menu.classList.contains('open')&&!menu.contains(e.target)&&!burger.contains(e.target)){
+    menu.classList.remove('open');
+  }
+});
+
+/* ── COUNTDOWN ────────────────────────────────────── */
+const REL=new Date('2026-11-19T00:00:00');
+function tick(){
+  const d=REL-Date.now();
+  if(d<=0){
+    ['cd-d','cd-h','cd-m','cd-s'].forEach(id=>document.getElementById(id).textContent='00');
+    document.getElementById('cd-d').textContent='000';
+    document.querySelector('.rel-date').textContent='🎉 GTA VI ВЫШЛА!';
+    return;
+  }
+  document.getElementById('cd-d').textContent=String(Math.floor(d/864e5)).padStart(3,'0');
+  document.getElementById('cd-h').textContent=String(Math.floor((d%864e5)/36e5)).padStart(2,'0');
+  document.getElementById('cd-m').textContent=String(Math.floor((d%36e5)/6e4)).padStart(2,'0');
+  document.getElementById('cd-s').textContent=String(Math.floor((d%6e4)/1e3)).padStart(2,'0');
+}
+setInterval(tick,1000);tick();
+
+/* ── UTILS ────────────────────────────────────────── */
+function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
+function stripHtml(s){return String(s||'').replace(/<[^>]+>/g,' ').replace(/\s+/g,' ').trim()}
+
+/* ── СТАТИЧЕСКИЕ НОВОСТИ ──────────────────────────── */
+const NEWS_STATIC=[
+  {title:"Предзаказы GTA VI открыты: Standard Edition — $79.99",body:"Rockstar Games запустила предзаказы в PS Store и Xbox Store. Стандартное издание — $79.99, Ultimate Edition — $99.99. Все покупатели до 20 ноября получают Vintage Vice City Pack с ретро-автомобилем '55 Vapid Stanier и гаражом в Оушен-Бич.",src:"StopGame.ru",date:"25 июня 2026",url:"https://stopgame.ru/newsdata/71944/grand_theft_auto_vi_stoit_s80_i_poluchit_ultimativnoe_izdanie_podrobnee_o_predzakaze"},
+  {title:"GTA VI выйдет в трёх изданиях: Standard, Deluxe и Ultimate",body:"Rockstar раскрыла состав изданий. Standard ($79.99) — базовая игра. Deluxe ($89.99) — с дополнительным контентом. Ultimate ($99.99) — эксклюзивный транспорт, оружие и одежда, встроенные в сюжет.",src:"Известия",date:"24 июня 2026",url:"https://iz.ru/2121111/2026-06-24/grand-theft-auto-vi-glavnoe-o-relize-tcenakh-i-predzakazakh"},
+  {title:"GTA VI оптимизируют под PS5 Pro — эксклюзивное партнёрство с Sony",body:"Rockstar и Sony Interactive Entertainment объявили о партнёрстве. GTA VI получит специальную оптимизацию для PS5 Pro: улучшенная трассировка лучей и повышенная частота кадров по сравнению с базовой PS5.",src:"GameMAG.ru",date:"26 июня 2026",url:"https://gamemag.ru/news/199977/gta-vi-pre-orders-now-live"},
+  {title:"Предзагрузка GTA VI начнётся 12 ноября — физических дисков не будет",body:"Take-Two подтвердила: предзагрузка откроется 12 ноября 2026. Физические копии — только код загрузки, диска внутри нет. Первый запуск — 19 ноября в полночь по местному времени.",src:"VGTimes.ru",date:"25 июня 2026",url:"https://vgtimes.ru/articles/159018-gta-6-predzakaz.html"},
+  {title:"Фанаты заметили возможный даунгрейд графики на новых скриншотах",body:"После публикации более 60 новых скриншотов часть сообщества сочла часть из них менее детализированными по сравнению с ранними кадрами трейлера. Rockstar пока не прокомментировала ситуацию.",src:"Goha.ru",date:"26 июня 2026",url:"https://www.goha.ru/rockstar-borzet-ne-stala-predzakazy-na-gta-6-za-7999-otkroyutsya-v-polnoch-po-moskve-dYzG3p"},
+  {title:"Аналитики прогнозируют продажи GTA VI на $1.2 млрд в первый день",body:"По прогнозам Niko Partners, перводневные продажи превысят $1.2 млрд. DFC Intelligence прогнозирует $3.2 млрд за первый год. CEO Take-Two Штраус Зельник назвал GTA VI «самой ценной франшизой в индустрии развлечений».",src:"VGTimes / Plugged In",date:"25 июня 2026",url:"https://pluggedin.ru/open/otkrylisy-predzakazy-na-GTA-6--standartnaya-versiya-za-80-dollarov-60487"}
+];
+
+function renderNews(items,live){
+  const box=document.getElementById('news-box');
+  box.innerHTML=`<div class="news-grid">${items.map((it,i)=>{
+    const body=esc(stripHtml(it.body||it.description||'').slice(0,230));
+    const link=it.url||it.link||'';
+    const safeSrc=esc(it.src||it.author||'GTA VI News');
+    return `<div class="news-card fade-up" style="animation-delay:${i*65}ms">
+      <div class="n-src">${safeSrc}</div>
+      <div class="n-title">${esc(it.title||'')}</div>
+      <div class="n-body">${body}</div>
+      <div class="n-foot">
+        <span class="n-date">${esc(it.date||it.pubDate||'')}</span>
+        ${link?`<a href="${esc(link)}" target="_blank" rel="noopener noreferrer" class="n-link">Читать →</a>`:''}
+      </div>
+    </div>`;
+  }).join('')}</div>`;
+  if(live) document.getElementById('news-ts').textContent=new Date().toLocaleTimeString('ru-RU',{hour:'2-digit',minute:'2-digit'})+' · live';
+}
+
+/* ── LIVE NEWS REFRESH via Google News RSS ────────── */
+async function refreshNews(){
+  const btn=document.getElementById('nbtn');
+  btn.disabled=true;btn.textContent='↻ Загрузка…';
+  // AbortController instead of AbortSignal.timeout() — Safari 15 compatibility
+  const ctrl=new AbortController();
+  const timer=setTimeout(()=>ctrl.abort(),8000);
+  try{
+    const q=encodeURIComponent('https://news.google.com/rss/search?q=GTA+VI+Grand+Theft+Auto&hl=ru&gl=RU&ceid=RU:ru');
+    const r=await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${q}&count=8`,{signal:ctrl.signal});
+    clearTimeout(timer);
+    if(!r.ok) throw new Error(`HTTP ${r.status}`);
+    const d=await r.json();
+    if(d.status==='ok'&&d.items?.length){
+      const items=d.items.map(it=>{
+        let host='Google News';
+        try{ if(it.link) host=new URL(it.link).hostname.replace('www.',''); }catch(_){}
+        return{title:it.title,body:it.description||it.content||'',src:it.author||host,url:it.link||'',date:it.pubDate?new Date(it.pubDate).toLocaleDateString('ru-RU'):''};
+      });
+      renderNews(items,true);
+    }
+  }catch(e){
+    clearTimeout(timer);
+    document.getElementById('news-ts').textContent='встроено (live недоступен)';
+    console.warn('[GTA6 Tracker] RSS:',e.message);
+  }
+  btn.disabled=false;btn.textContent='↻ Обновить';
+}
+
+/* ── SCREENSHOTS ──────────────────────────────────── */
+const SHOTS=[
+  {url:'https://media.gtaboom.com/variants/1280/media/images/55/92/gtavi-wallpaper-artwork-jason-and-lucia-01-with-logos-landscape.jpg',cap:'Джейсон и Лусия — официальный арт'},
+  {url:'https://media.gtaboom.com/variants/1280/media/images/7b/59/gtavi-screenshot-places-vice-city-01.jpg',cap:'Вайс-Сити — официальный скриншот'},
+  {url:'https://media.gtaboom.com/variants/1280/media/images/ba/df/gtavi-screenshot-people-jason-duval-01.jpg',cap:'Джейсон Дюваль — протагонист'},
+  {url:'https://media.gtaboom.com/variants/1280/media/images/3e/b6/gtavi-screenshot-people-lucia-caminos-01.jpg',cap:'Лусия Каминос — протагонист'},
+  {url:'https://media.gtaboom.com/variants/1280/media/images/54/c0/gtavi-screenshot-places-vice-city-02.jpg',cap:'Вайс-Сити — ночная сцена'},
+  {url:'https://media.gtaboom.com/variants/1280/media/images/a0/38/gtavi-screenshot-places-leonida-keys-01.jpg',cap:'Ключи Леониды'},
+  {url:'https://media.gtaboom.com/variants/1280/media/images/03/50/vintage_vice_city_pack_exclusive_looks_01.jpg',cap:'Vintage Vice City Pack — бонус предзаказа'},
+  {url:'https://media.gtaboom.com/variants/1280/media/images/9d/f5/gtavi-screenshot-places-grassrivers-01.jpg',cap:'Грассриверс — природа Леониды'},
+  {url:'https://media.gtaboom.com/variants/1280/media/images/43/75/gtavi-screenshot-places-port-gellhorn-01.jpg',cap:'Порт Геллхорн'},
+  {url:'https://media.gtaboom.com/variants/1280/media/images/f2/4f/gtavi-screenshot-places-vice-city-03.jpg',cap:'Вайс-Сити — улицы города'},
+  {url:'https://media.gtaboom.com/variants/1280/media/images/71/5e/gtavi-screenshot-places-leonida-keys-02.jpg',cap:'Ключи Леониды — залив'},
+  {url:'https://media.gtaboom.com/variants/1280/media/images/4f/b5/gtavi-wallpaper-artwork-official-cover-art-tablet.jpg',cap:'Официальная обложка GTA VI'},
+];
+
+function renderShots(){
+  const grid=document.getElementById('shots-grid');
+  grid.innerHTML=SHOTS.map(s=>`
+    <div class="shot">
+      <img src="${esc(s.url)}" alt="${esc(s.cap)}" loading="lazy"
+        onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="shot-ph" style="display:none">
+        <span class="ico">📷</span>
+        <span>${esc(s.cap)}</span>
+        <span class="tag">Официальный скриншот</span>
+      </div>
+      <div class="shot-cap">${esc(s.cap)}</div>
+    </div>`).join('');
+}
+
+/* ── INIT ─────────────────────────────────────────── */
+renderNews(NEWS_STATIC,false);
+renderShots();
+setInterval(refreshNews,30*60*1000);
+</script>
+</body>
+</html>
