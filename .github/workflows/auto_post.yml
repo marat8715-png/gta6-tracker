@@ -18,17 +18,17 @@ jobs:
           python-version: '3.11'
       - run: pip install requests
 
-      - name: Debug bot membership
+      - name: Post news to Telegram
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHANNEL: ${{ secrets.TELEGRAM_CHANNEL }}
-        run: python debug_bot.py 2>&1 | tee last_run.log
+        run: python post_news.py 2>&1 | tee last_run.log
 
-      - name: Save log
+      - name: Save logs and hashes
         if: always()
         run: |
           git config user.email "bot@github.com"
           git config user.name "GTA6 Bot"
-          git add last_run.log posted_hashes.json 2>/dev/null || true
-          git diff --staged --quiet || git commit -m "📋 Debug log [skip ci]"
+          git add posted_hashes.json last_run.log 2>/dev/null || true
+          git diff --staged --quiet || git commit -m "📋 Update log [skip ci]"
           git push || true
