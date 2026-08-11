@@ -1,22 +1,33 @@
-   Пропущено #1: Bad Request: message can't be deleted
-   Пропущено #2: Bad Request: message to delete not found
-✅ Удалено #3
-   Пропущено #4: Bad Request: message to delete not found
-✅ Удалено #5
-✅ Удалено #6
-✅ Удалено #7
-✅ Удалено #8
-✅ Удалено #9
-✅ Удалено #10
-✅ Удалено #11
-✅ Удалено #12
-✅ Удалено #13
-✅ Удалено #14
-✅ Удалено #15
-✅ Удалено #16
-✅ Удалено #17
-✅ Удалено #18
-✅ Удалено #19
-✅ Удалено #20
+=== GTA VI Telegram Bot ===
+Token: 8614212133:A...
+Channel raw: 'GTAVITracker'
+Bot: gta6trackerbot | ok=True
 
-Итог: удалено 17 сообщений: [3, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+Searching for channel...
+  Testing channel: '@GTAVITracker'
+    → ok=True | channel
+    ✅ Found! chat_id=-1004401509809, title=GTAVI Tracker
+
+Using channel_id: -1004401509809
+
+Fetching news...
+  Feed https://news.google.com/rss/search?q=GTA+VI+Grand+Theft+Auto: 100 items
+  Feed https://vgtimes.ru/rss.xml: 4 items
+Total: 104 items
+
+  → GTA 6: официальная цена $80 и $100 — всё о предзаказе - vpesports
+  ✅ Posted!
+
+  → Grand Theft Auto VI чаще покупают в издании за $99,99 - Newxboxon
+  ✅ Posted!
+
+  → Глава Take-Two: игроки охотнее покупают GTA VI за $100, чем за $8
+  ✅ Posted!
+
+  → Фанаты GTA VI хотят спасти жизнь геймера и собирают деньги, чтобы
+  ✅ Posted!
+
+  → Предзаказы Grand Theft Auto VI достигли "беспрецедентного и пораз
+  ✅ Posted!
+
+=== Done: 5 posted, 0 errors ===
