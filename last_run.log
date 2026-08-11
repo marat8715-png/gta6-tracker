@@ -1,48 +1,22 @@
-=== GTA VI Telegram Bot ===
-Token: 8614212133:A...
-Channel raw: 'GTAVITracker'
-Bot: gta6trackerbot | ok=True
+   Пропущено #1: Bad Request: message can't be deleted
+   Пропущено #2: Bad Request: message to delete not found
+✅ Удалено #3
+   Пропущено #4: Bad Request: message to delete not found
+✅ Удалено #5
+✅ Удалено #6
+✅ Удалено #7
+✅ Удалено #8
+✅ Удалено #9
+✅ Удалено #10
+✅ Удалено #11
+✅ Удалено #12
+✅ Удалено #13
+✅ Удалено #14
+✅ Удалено #15
+✅ Удалено #16
+✅ Удалено #17
+✅ Удалено #18
+✅ Удалено #19
+✅ Удалено #20
 
-Searching for channel...
-  Testing channel: '@GTAVITracker'
-    → ok=True | channel
-    ✅ Found! chat_id=-1004401509809, title=GTAVI Tracker
-
-Using channel_id: -1004401509809
-
-Fetching news...
-  Feed https://news.google.com/rss/search?q=GTA+VI+Grand+Theft+Auto: 100 items
-  Feed https://vgtimes.ru/rss.xml: 4 items
-Total: 104 items
-
-  → Grand Theft Auto VI чаще покупают в издании за $99,99 - Newxboxon
-  ✅ Posted!
-
-  → Эксклюзивный трейлер Grand Theft Auto VI и продажа Electronic Art
-  ✅ Posted!
-
-  → GTA VI покажут эксклюзивно на Netflix 27 августа - Techora.ru
-  ✅ Posted!
-
-  → Где превью GTA VI? Геймеры готовы к очередному переносу релиза - 
-  ✅ Posted!
-
-  → GTA 6 за $80 или $100: сравнение изданий и механики RDR2 - vpespo
-  ✅ Posted!
-
-  → «Мы заслуживаем независимость»: Take-Two не хочет продаваться Net
-  ✅ Posted!
-
-  → Rockstar Games получила от Netflix круглую сумму за временную экс
-  ✅ Posted!
-
-  → GTA 6 без диска: физические копии — только код загрузки - vpespor
-  ✅ Posted!
-
-  → Только не надо потом жаловаться на повышение цен: игроки охотно п
-  ✅ Posted!
-
-  → Глава Take-Two: 80 долларов за Grand Theft Auto VI — невероятно в
-  ✅ Posted!
-
-=== Done: 10 posted, 0 errors ===
+Итог: удалено 17 сообщений: [3, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
