@@ -18,17 +18,16 @@ jobs:
           python-version: '3.11'
       - run: pip install requests
 
-      - name: Post news to Telegram
+      - name: Delete bad messages
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHANNEL: ${{ secrets.TELEGRAM_CHANNEL }}
-        run: python post_news.py 2>&1 | tee last_run.log
+        run: python delete_messages.py 2>&1 | tee last_run.log
 
-      - name: Save logs and hashes
+      - name: Save log
         if: always()
         run: |
           git config user.email "bot@github.com"
           git config user.name "GTA6 Bot"
-          git add posted_hashes.json last_run.log 2>/dev/null || true
-          git diff --staged --quiet || git commit -m "📋 Update log [skip ci]"
+          git add last_run.log 2>/dev/null || true
+          git diff --staged --quiet || git commit -m "📋 Delete log [skip ci]"
           git push || true
