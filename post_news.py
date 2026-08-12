@@ -2,86 +2,56 @@ import requests
 import xml.etree.ElementTree as ET
 from datetime import datetime, timezone, timedelta
 from email.utils import parsedate_to_datetime
-import os, json, hashlib, re, sys
+import os, json, hashlib, re, html
 
-BOT_TOKEN   = os.environ['TELEGRAM_BOT_TOKEN'].strip()
-CHANNEL_RAW = os.environ.get('TELEGRAM_CHANNEL', 'GTAVITracker').strip()
+BOT_TOKEN   = os.environ['TELEGRAM_BOT_TOKEN']
+CHANNEL     = os.environ.get('TELEGRAM_CHANNEL', '@GTAVITracker')
 SITE_URL    = 'https://marat8715-png.github.io/gta6-tracker/'
 HASHES_FILE = 'posted_hashes.json'
 
 RSS_FEEDS = [
-    'https://news.google.com/rss/search?q=GTA+VI+Grand+Theft+Auto&hl=ru&gl=RU&ceid=RU:ru',
-    'https://vgtimes.ru/rss.xml',
+    'https://news.google.com/rss/search?q=GTA+VI+Grand+Theft+Auto+6&hl=ru&gl=RU&ceid=RU:ru',
+    'https://news.google.com/rss/search?q=GTA+VI+Rockstar+Games&hl=ru&gl=RU&ceid=RU:ru',
 ]
-HEADERS = {'User-Agent': 'Mozilla/5.0 (compatible; GTABot/1.0)'}
 
-def tg(method, **kwargs):
-    r = requests.post(
-        f'https://api.telegram.org/bot{BOT_TOKEN}/{method}',
-        json=kwargs, timeout=15
-    )
-    return r.json()
+def clean_html(text):
+    text = re.sub(r'<[^>]+>', '', text)
+    return html.unescape(text).strip()
 
-def find_channel():
-    """Try different channel ID formats and return working one"""
-    candidates = []
-    raw = CHANNEL_RAW.lstrip('@')
-    candidates = [f'@{raw}', raw, f'@{raw.lower()}', raw.lower()]
+def title_hash(title):
+    """Хеш по нормализованному заголовку — ловит дубли с разными URL"""
+    normalized = re.sub(r'\W+', '', title.lower())[:80]
+    return hashlib.md5(normalized.encode()).hexdigest()
 
-    for candidate in candidates:
-        print(f'  Testing channel: {repr(candidate)}')
-        result = tg('getChat', chat_id=candidate)
-        print(f'    → ok={result.get("ok")} | {result.get("description","") or result.get("result",{}).get("type","")}')
-        if result.get('ok'):
-            chat_id = result['result']['id']
-            title   = result['result'].get('title','?')
-            print(f'    ✅ Found! chat_id={chat_id}, title={title}')
-            return str(chat_id)
-
-    print('  ❌ Channel not found via username. Trying getUpdates...')
-    upd = tg('getUpdates', limit=10, allowed_updates=['channel_post'])
-    print(f'  getUpdates: {upd}')
-    return None
-
-def fetch_feed(url):
-    try:
-        r = requests.get(url, timeout=12, headers=HEADERS)
-        r.raise_for_status()
-        root = ET.fromstring(r.content)
-        items = []
-        for item in root.findall('.//item'):
-            title = item.findtext('title', '').strip()
-            link  = item.findtext('link', '').strip()
-            guid  = item.findtext('guid', '').strip()
-            if 'google.com' in link and guid.startswith('http'):
-                link = guid
-            pub  = item.findtext('pubDate', '')
-            desc = item.findtext('description', '').strip()
-            combined = (title + desc).lower()
-            if 'google.com' not in url:
-                if not any(kw in combined for kw in ['gta', 'grand theft', 'rockstar']):
-                    continue
-            if title:
-                items.append({'title': title, 'link': link, 'pubDate': pub, 'description': desc})
-        print(f'  Feed {url[:60]}: {len(items)} items')
-        return items
-    except Exception as e:
-        print(f'  Feed error {url[:50]}: {e}')
-        return []
+def url_hash(url):
+    return hashlib.md5(url.encode()).hexdigest()
 
 def get_news():
-    seen, results = set(), []
-    for url in RSS_FEEDS:
-        for item in fetch_feed(url):
-            key = item['link'] or item['title']
-            if key not in seen:
-                seen.add(key)
-                results.append(item)
-    return results
+    items = []
+    seen_titles = set()
+    for feed_url in RSS_FEEDS:
+        try:
+            r = requests.get(feed_url, timeout=15, headers={'User-Agent': 'Mozilla/5.0'})
+            root = ET.fromstring(r.content)
+            for item in root.findall('.//item')[:10]:
+                title = clean_html(item.findtext('title', ''))
+                th = title_hash(title)
+                if th in seen_titles:
+                    continue  # дубль из другого фида
+                seen_titles.add(th)
+                items.append({
+                    'title':       title,
+                    'link':        item.findtext('link', '').strip(),
+                    'pubDate':     item.findtext('pubDate', ''),
+                    'description': clean_html(item.findtext('description', '')),
+                })
+        except Exception as e:
+            print(f'Feed error: {e}')
+    return items
 
-def is_recent(pub_str, hours=9999):
+def is_recent(pub_date_str, hours=4):
     try:
-        pub_dt = parsedate_to_datetime(pub_str)
+        pub_dt = parsedate_to_datetime(pub_date_str)
         return (datetime.now(timezone.utc) - pub_dt) <= timedelta(hours=hours)
     except:
         return True
@@ -89,89 +59,64 @@ def is_recent(pub_str, hours=9999):
 def load_hashes():
     try:
         with open(HASHES_FILE) as f:
-            data = json.load(f)
-            return set(data), len(data) > 0
+            return set(json.load(f))
     except:
-        return set(), False
+        return set()
 
 def save_hashes(hashes):
     with open(HASHES_FILE, 'w') as f:
         json.dump(list(hashes)[-300:], f)
 
-def clean_html(text):
-    import html
-    text = re.sub(r'<[^>]+>', ' ', text or '')  # strip tags
-    text = html.unescape(text)                    # decode &nbsp; &amp; etc
-    text = re.sub(r'\s+', ' ', text).strip()    # collapse whitespace
-    return text
-
-def make_message(item):
-    title = clean_html(item['title'])
+def post(item):
+    title = item['title']
     link  = item['link']
-    desc  = clean_html(item['description'])
-    if len(desc) > 300:
-        desc = desc[:300].rsplit(' ', 1)[0] + '…'
-    desc_block = f'\n\n{desc}' if desc else ''
-    return (
-        f'🎮 <b>GTA VI — Новости</b>{desc_block}\n\n'
+    desc  = item['description'][:250]
+    if desc:
+        desc = f'\n\n{desc}…'
+
+    text = (
+        f'🎮 <b>GTA VI — Новость</b>{desc}\n\n'
         f'📰 <b>{title}</b>\n\n'
         f'🔗 <a href="{link}">Читать полностью</a>\n'
-        f'🌐 <a href="{SITE_URL}">GTA VI TRACKER</a>'
+        f'🌐 <a href="{SITE_URL}">GTA VI TRACKER — все новости</a>'
     )
+    r = requests.post(
+        f'https://api.telegram.org/bot{BOT_TOKEN}/sendMessage',
+        json={'chat_id': CHANNEL, 'text': text,
+              'parse_mode': 'HTML', 'disable_web_page_preview': False},
+        timeout=10
+    )
+    return r.json()
 
 def main():
-    print(f'=== GTA VI Telegram Bot ===')
-    print(f'Token: {BOT_TOKEN[:12]}...')
-    print(f'Channel raw: {repr(CHANNEL_RAW)}')
-
-    # Verify bot itself
-    me = tg('getMe')
-    print(f'Bot: {me.get("result",{}).get("username","??")} | ok={me.get("ok")}')
-
-    # Find working channel ID
-    print('\nSearching for channel...')
-    channel_id = find_channel()
-    if not channel_id:
-        print('FATAL: Cannot find channel. Exiting.')
-        sys.exit(1)
-
-    print(f'\nUsing channel_id: {channel_id}')
-
-    # Fetch news
-    print('\nFetching news...')
-    items = get_news()
-    print(f'Total: {len(items)} items')
-
-    posted, had_before = load_hashes()
+    items   = get_news()
+    posted  = load_hashes()
     updated = set(posted)
-    max_posts = 5 if not had_before else 10
+    count   = 0
 
-    count = errors = 0
-    for item in items[:max_posts*3]:
-        if count >= max_posts: break
-        h = hashlib.md5((item['link'] or item['title']).encode()).hexdigest()
-        if h in posted:
+    for item in items:
+        # Проверяем оба хеша — по URL и по заголовку
+        uh = url_hash(item['link'])
+        th = title_hash(item['title'])
+
+        if uh in posted or th in posted:
+            print(f"Skip (дубль): {item['title'][:60]}")
+            continue
+        if not is_recent(item['pubDate'], hours=4):
+            print(f"Skip (старая): {item['title'][:60]}")
             continue
 
-        print(f'\n  → {item["title"][:65]}')
-        result = tg('sendMessage',
-                    chat_id=channel_id,
-                    text=make_message(item),
-                    parse_mode='HTML',
-                    disable_web_page_preview=False)
-
+        result = post(item)
         if result.get('ok'):
-            updated.add(h)
+            updated.add(uh)
+            updated.add(th)  # сохраняем оба хеша
             count += 1
-            print(f'  ✅ Posted!')
+            print(f"✅ Опубликовано: {item['title'][:70]}")
         else:
-            errors += 1
-            print(f'  ❌ {result.get("error_code")} {result.get("description")}')
+            print(f"❌ Ошибка: {result.get('description', 'unknown')}")
 
     save_hashes(updated)
-    print(f'\n=== Done: {count} posted, {errors} errors ===')
-    if errors > 0 and count == 0:
-        sys.exit(1)
+    print(f"\nДобавлено {count} новых новостей в канал")
 
 if __name__ == '__main__':
     main()
