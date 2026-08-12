@@ -1,21 +1,19 @@
-=== GTA VI Telegram Bot ===
-Token: 8614212133:A...
-Channel raw: 'GTAVITracker'
-Bot: gta6trackerbot | ok=True
+Skip (старая): GTA 6 предзаказ 25 июня: цену GTA VI назовут до конца июня -
+Skip (старая): Дорогое издание Grand Theft Auto VI за 100 долларов лидирует
+Skip (старая): GTA 6 издания: Standard или Ultimate — что выбрать в 2026 - 
+Skip (старая): Эксклюзивный трейлер Grand Theft Auto VI и продажа Electroni
+Skip (старая): Джейсон Шрайер призвал не ждать скорых новостей об онлайн-ре
+Skip (старая): GTA 6 — третий трейлер 7 августа, дата выхода и предзаказы -
+Skip (старая): Предзаказы Grand Theft Auto VI достигли "беспрецедентного и 
+Skip (старая): GTA 6: официальная цена $80 и $100 — всё о предзаказе - vpes
+Skip (старая): Rockstar Games получила от Netflix круглую сумму за временну
+Skip (старая): Слежка за Rockstar: фанат прослушивает офис ради трейлера GT
+Skip (старая): Как слить GTA 6 глазами безопасника. Часть 1 - Хабр
+Skip (старая): Глава Take-Two: игроки охотнее покупают GTA VI за $100, чем 
+Skip (старая): Инсайдер заявил, что геймплей GTA 6 будет на совершенно ново
+Skip (старая): Дорогое издание GTA 6 покупают лучше дешевого - VK Play
+Skip (старая): Цена не напугала: большинство геймеров выбирает расширенное 
+Skip (старая): «Смотреть будут все, и вы тоже»: глава Take-Two призвал всех
+Skip (старая): Глава Take-Two: 80 долларов за Grand Theft Auto VI — невероя
 
-Searching for channel...
-  Testing channel: '@GTAVITracker'
-    → ok=True | channel
-    ✅ Found! chat_id=-1004401509809, title=GTAVI Tracker
-
-Using channel_id: -1004401509809
-
-Fetching news...
-  Feed https://news.google.com/rss/search?q=GTA+VI+Grand+Theft+Auto: 100 items
-  Feed https://vgtimes.ru/rss.xml: 1 items
-Total: 101 items
-
-  → Покупатели предпочитают более дорогую версию: Ultimate Edition GT
-  ✅ Posted!
-
-=== Done: 1 posted, 0 errors ===
+Добавлено 0 новых новостей в канал
