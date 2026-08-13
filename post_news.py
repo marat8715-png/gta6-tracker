@@ -19,7 +19,6 @@ def clean_html(text):
     return html.unescape(text).strip()
 
 def title_hash(title):
-    """Хеш по нормализованному заголовку — ловит дубли с разными URL"""
     normalized = re.sub(r'\W+', '', title.lower())[:80]
     return hashlib.md5(normalized.encode()).hexdigest()
 
@@ -35,9 +34,11 @@ def get_news():
             root = ET.fromstring(r.content)
             for item in root.findall('.//item')[:10]:
                 title = clean_html(item.findtext('title', ''))
+                if not title:
+                    continue
                 th = title_hash(title)
                 if th in seen_titles:
-                    continue  # дубль из другого фида
+                    continue
                 seen_titles.add(th)
                 items.append({
                     'title':       title,
@@ -47,12 +48,16 @@ def get_news():
                 })
         except Exception as e:
             print(f'Feed error: {e}')
+    print(f'Найдено статей из RSS: {len(items)}')
     return items
 
-def is_recent(pub_date_str, hours=4):
+def is_recent(pub_date_str, hours=48):
+    """Публикуем новости за последние 48 часов"""
     try:
         pub_dt = parsedate_to_datetime(pub_date_str)
-        return (datetime.now(timezone.utc) - pub_dt) <= timedelta(hours=hours)
+        age = datetime.now(timezone.utc) - pub_dt
+        print(f'  Возраст статьи: {int(age.total_seconds()/3600)} ч.')
+        return age <= timedelta(hours=hours)
     except:
         return True
 
@@ -95,28 +100,29 @@ def main():
     count   = 0
 
     for item in items:
-        # Проверяем оба хеша — по URL и по заголовку
+        print(f'\n→ Проверяю: {item["title"][:60]}')
         uh = url_hash(item['link'])
         th = title_hash(item['title'])
 
         if uh in posted or th in posted:
-            print(f"Skip (дубль): {item['title'][:60]}")
+            print(f'  Skip: уже публиковалось')
             continue
-        if not is_recent(item['pubDate'], hours=4):
-            print(f"Skip (старая): {item['title'][:60]}")
+
+        if not is_recent(item['pubDate'], hours=48):
+            print(f'  Skip: слишком старая (>48ч)')
             continue
 
         result = post(item)
         if result.get('ok'):
             updated.add(uh)
-            updated.add(th)  # сохраняем оба хеша
+            updated.add(th)
             count += 1
-            print(f"✅ Опубликовано: {item['title'][:70]}")
+            print(f'  ✅ Опубликовано!')
         else:
-            print(f"❌ Ошибка: {result.get('description', 'unknown')}")
+            print(f'  ❌ Ошибка Telegram: {result.get("description", "unknown")}')
 
     save_hashes(updated)
-    print(f"\nДобавлено {count} новых новостей в канал")
+    print(f'\n=== Итого опубликовано: {count} новостей ===')
 
 if __name__ == '__main__':
     main()
